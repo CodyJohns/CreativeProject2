@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS 260 Proj2</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+<center><h2>QR Code Generator</h2></center>
+<div id="main">
+	<h4>Step 1:</h4>
+	<label for="website">Paste or type website url</label>
+	<input type="text" id="url" name="website" required><br>
+	<h4>Step 2:</h4>
+	<label for="qrsize">QR Code size/resolution (in pixels)</label><br>
+	<input type="number" id="size" name="qrsize" value='300' max="1000" min="200" required><br>
+	<h4>Step 3:</h4>
+	<label for="filetype">Select file type</label><br>
+	<select id="filetype" name="filetype" required><br>
+		<option value="">Choose an option:</option>
+		<option value="png">.PNG</option>
+		<option value="gif">.GIF</option>
+		<option value="jpeg">.JPEG</option>
+		<option value="jpg">.JPG</option>
+	</select><br>
+	<h4>Step 4:</h4>
+	<input type="submit" id="sub" value="Create">
+	<p id="adv"><b>Advanced options</b></p>
+	<div id="advdiv">
+		<label for="color">Data pixel color (Hex Code e.g. "76EF76"):</label><br>
+		<input type="text" id="color"><br><br>
+		<label for="bgcolor">Background color (Hex Code):</label><br>
+		<input type="text" id="bgcolor"><br><br>
+		<label for="margin">Outside margin thickness:</label><br>
+		<input type="number" id="margin" min="0" max="50"><br><br>
+		<label for="ecc">Error Correction Code (If code is scratched or faded on paper, the code may still be used)</label><br>
+		<select id="ecc">
+			<option>Choose an option:</option>
+			<option value="L">Low (~7% restoration)</option>
+			<option value="M">Medium (~15% restoration)</option>
+			<option value="Q">Quality (~25% restoration)</option>
+			<option value="H">High (~30% restoration)</option>
+		</select>
+	</div>
+	<br><br><br>
+	<div id="qrholder">
+		<img id="result" src="images/loading.gif" alt="" title="">
+	</div>
+</div>
+<footer>
+	<center>&copy; 2021. Cody Johns. <a href="https://github.com/CodyJohns/CreativeProject2" target="_blank">Github page</a></center>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
